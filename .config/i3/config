@@ -92,16 +92,16 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
-set $workspace1 "1: Browser"
-set $workspace2 "2: Browser2"
-set $workspace3 "3: Sublime"
-set $workspace4 "4: Chat"
-set $workspace5 "5: Sublime2"
-set $workspace6 "6: Random"
-set $workspace7 "7: Email"
-set $workspace8 "8: Random"
-set $workspace9 "9: Random"
-set $workspace10 "10: Music"
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
+set $workspace4 "4: "
+set $workspace5 "5: "
+set $workspace6 "6: "
+set $workspace7 "7: "
+set $workspace8 "8: "
+set $workspace9 "9: "
+set $workspace10 "10: "
 
 
 # switch to workspace
@@ -170,12 +170,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Settings for switching keyboard
-set $keyboardMode "keyboard q=qwerty c=colemak"
-bindsym $mod+shift+k mode $keyboardMode
+# Settings for switching keyboard 
+set $keyboardMode "keyboard q=qwerty c=colemak p=persian g=greek"
+bindsym $mod+shift+Return mode $keyboardMode
 mode $keyboardMode{
     bindsym q exec setxkbmap us, mode "default"
+    bindsym g exec setxkbmap gr, mode "default"
+    bindsym p exec setxkbmap ir, mode "default"
     bindsym c exec setxkbmap us -variant colemak -option caps:backspace, mode "default"
+    bindsym space exec setxkbmap us -variant colemak -option caps:backspace, mode "default"
     # back to normal: enter or escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -237,14 +240,15 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # screenshot
-bindsym Print exec scrot -u ~/Downloads/Screenshot%Y-%m-%d%H:%M:%S.png
-
-
+bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Print exec scrot -u $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Mod1+Shift+Print exec scrot -s $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 
 exec google-chrome
 exec subl
 exec slack
 exec dropbox start
+exec nm-applet
 
 exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always xset r 66
