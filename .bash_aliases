@@ -15,6 +15,7 @@ alias sudo='sudo '
 alias lec='ssh trevortds@lectura.cs.arizona.edu'
 alias tyr='ssh -v -p 2222 pi@tyr.redirectme.net'
 alias ..='cd ..'
+alias fix_monitor='xrandr --output HDMI1 --off'
 
 leccp() {
    scp "$1" "trevortds@lectura.cs.arizona.edu:352/prog1"
