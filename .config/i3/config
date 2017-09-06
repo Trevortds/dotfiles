@@ -281,7 +281,8 @@ exec gksudo mullvad
 exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always xset r 66
 # exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
-exec_always xrandr --output HDMI-1 --mode 1920x1080 --pos 13x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal 
+# exec_always xrandr --output HDMI-1 --mode 1920x1080 --pos 13x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal 
+exec_always /home/trevor/.screenlayout/office.sh
 
 bindsym $mod+BackSpace exec "xrandr --output HDMI-1 --off"
 
