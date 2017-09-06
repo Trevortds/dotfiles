@@ -290,7 +290,7 @@ exec_always xinput set-prop 16 "Synaptics Palm Detection" 1
 exec_always xinput set-prop 16 "Synaptics Palm Dimensions" 5, 5
 
 #open settings
-bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=\"Unity\" && unity-control-center
+bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=GNOME && gnome-control-center
 
 exec_always /usr/bin/compton --config /home/trevor/.compton.conf
 exec_always feh --bg-scale /home/trevor/Pictures/hubble_orion.jpg 
