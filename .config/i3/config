@@ -277,7 +277,7 @@ exec slack
 exec dropbox start
 exec nm-applet
 exec gksudo mullvad
-exec spotify &
+exec /usr/bin/spotify --force-device-scale-factor=1.5 &
 
 exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always xset r 66
