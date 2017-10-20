@@ -188,7 +188,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Settings for switching keyboard 
+# Settings for switching keyboard
 set $keyboardMode "keyboard q=qwerty c=colemak p=persian g=greek"
 bindsym $mod+shift+Return mode $keyboardMode
 mode $keyboardMode{
@@ -269,7 +269,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # screenshot
 bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 bindsym $mod+Print exec scrot -u $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym $mod+Shift+Print exec scrot -s $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+shift+Print exec scrot -s $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 
 exec google-chrome
 exec subl
@@ -282,10 +282,11 @@ exec /usr/bin/spotify --force-device-scale-factor=1.5 &
 exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always xset r 66
 # exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
-# exec_always xrandr --output HDMI-1 --mode 1920x1080 --pos 13x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal 
+# exec_always xrandr --output HDMI-1 --mode 1920x1080 --pos 13x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
 exec_always /home/trevor/.screenlayout/office.sh
 
-bindsym $mod+BackSpace exec "xrandr --output HDMI-1 --off"
+bindsym $mod+BackSpace exec "xrandr --output DP-1-1-2 --off"
+bindsym $mod+shift+BackSpace exec "xrandr --output DP-1-1-2 --off"
 
 exec_always xinput set-prop 16 "Synaptics Palm Detection" 1
 exec_always xinput set-prop 16 "Synaptics Palm Dimensions" 5, 5
@@ -294,4 +295,4 @@ exec_always xinput set-prop 16 "Synaptics Palm Dimensions" 5, 5
 bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=GNOME && gnome-control-center
 
 exec_always /usr/bin/compton --config /home/trevor/.compton.conf
-exec_always feh --bg-scale /home/trevor/Pictures/hubble_orion.jpg 
+exec_always feh --bg-scale /home/trevor/Pictures/hubble_orion.jpg
