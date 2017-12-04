@@ -247,9 +247,9 @@ bindsym $mod+o exec rofi -show run -lines 5 -eh 2 -width 100 -padding 430 -opaci
 
 
 #Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -285,8 +285,8 @@ exec_always xset r 66
 # exec_always xrandr --output HDMI-1 --mode 1920x1080 --pos 13x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
 exec_always /home/trevor/.screenlayout/office.sh
 
-bindsym $mod+BackSpace exec "xrandr --output DP-1-1-2 --off"
-bindsym $mod+shift+BackSpace exec "xrandr --output DP-1-1-2 --off"
+bindsym $mod+BackSpace exec "xrandr --output DP-1-1-2 --off  --output DP-1-2-2 --off"
+bindsym $mod+shift+BackSpace exec "/home/trevor/.screenlayout/office.sh"
 
 exec_always xinput set-prop 16 "Synaptics Palm Detection" 1
 exec_always xinput set-prop 16 "Synaptics Palm Dimensions" 5, 5
