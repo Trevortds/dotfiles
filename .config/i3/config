@@ -200,6 +200,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font xft:monospace 9, FontAwesome 10
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         tray_output HDMI-0
         position top
@@ -218,10 +219,10 @@ bar {
 bindsym $mod+l exec i3lock -c 000000
 
 # move the whole workspace to next display
-bindsym $mod+comma move workspace to output up
-bindsym $mod+period move workspace to output down
-bindsym $mod+shift+comma move workspace to output left
-bindsym $mod+shift+period move workspace to output right
+bindsym $mod+shift+comma move workspace to output up
+bindsym $mod+shift+period move workspace to output down
+bindsym $mod+comma move workspace to output left
+bindsym $mod+period move workspace to output right
 
 #dmenu replacement
 bindsym $mod+o exec rofi -show run -lines 7 -eh 2 -width 100 -fullscreen -padding 300 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
@@ -262,4 +263,4 @@ exec_always xrandr --output DVI-D-0 --mode 1920x1080 --pos 0x0 --rotate normal -
 
 
 exec_always /usr/bin/compton --config /home/trevor/.compton.conf
-exec feh --bg-scale --no-xinerama /home/trevor/Pictures/BigWallpapers/3840x1080/Interdictor.jpg 
+exec_always feh --bg-max --no-xinerama /home/trevor/Pictures/BigWallpapers/3840x1080/Interdictor.jpg 
