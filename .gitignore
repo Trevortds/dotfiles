@@ -1,0 +1,12 @@
+# ignore everything 
+
+*
+
+# but not these
+!.gitignore
+!.bash_aliases
+!.compton.conf
+!.i3status.conf
+!.config/
+!.config/i3/
+!.config/i3/*

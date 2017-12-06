@@ -20,3 +20,5 @@ alias fix_monitor='xrandr --output HDMI1 --off'
 leccp() {
    scp "$1" "trevortds@lectura.cs.arizona.edu:352/prog1"
 }
+
+alias spotify="/usr/bin/spotify --force-device-scale-factor=1.5"
