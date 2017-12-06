@@ -1,0 +1,16 @@
+# ignore everything 
+
+*
+
+# but not these
+!.gitignore
+!.bash_aliases
+!.compton.conf
+!.i3status.conf
+!.config/
+!.config/i3/
+!.config/i3/*
+!.config/sublime-text-3/
+!.config/sublime-text-3/Packages/
+!.config/sublime-text-3/Packages/User/
+!.config/sublime-text-3/Packages/User/Preferences.sublime-settings
