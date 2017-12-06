@@ -142,6 +142,11 @@ assign [class="Thunderbird"] $workspace7
 assign [class="Mullvad"] $workspace8
 
 
+# no borders in chrome
+for_window [class="^Google-chrome$" title=" - Google Chrome$"] border none
+
+
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
