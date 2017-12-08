@@ -242,8 +242,8 @@ bar {
 bindsym $mod+l exec i3lock -c 000000
 
 # move the whole workspace to next display
-bindsym $mod+comma move workspace to output up
-bindsym $mod+period move workspace to output down
+bindsym $mod+comma move workspace to output left
+bindsym $mod+period move workspace to output right
 bindsym $mod+shift+comma move workspace to output left
 bindsym $mod+shift+period move workspace to output right
 
