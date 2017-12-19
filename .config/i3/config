@@ -262,9 +262,13 @@ exec slack
 exec dropbox start
 exec thunderbird
 
-exec_always setxkbmap us -variant colemak -option caps:backspace
+#exec_always setxkbmap us -variant colemak -option caps:backspace
+exec_always setxkbmap us -option caps:backspace
 exec_always xset r 66
 exec_always bash ~/.screenlayout/homelayout.sh
+
+#open settings
+bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=GNOME && gnome-control-center
 
 
 exec_always /usr/bin/compton --config /home/trevor/.compton.conf
