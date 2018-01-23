@@ -98,15 +98,25 @@ bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
 set $workspace1 "1: "
-set $workspace2 "2: "
+set $workspace2 "2: "
 set $workspace3 "3: "
 set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
+set $workspace5 "5: "
+set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
-set $workspace9 "9: "
+set $workspace9 "9: "
 set $workspace10 "10: "
+set $workspace11 "11: "
+set $workspace12 "12: "
+set $workspace13 "13: "
+set $workspace14 "14: "
+set $workspace15 "15: "
+set $workspace16 "16: "
+set $workspace17 "17: "
+set $workspace18 "18: "
+set $workspace19 "19: "
+set $workspace20 "20: "
 
 
 # switch to workspace
@@ -120,6 +130,16 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
+bindsym $mod+F13 workspace $workspace11
+bindsym $mod+F14 workspace $workspace12
+bindsym $mod+F15 workspace $workspace13
+bindsym $mod+F16 workspace $workspace14
+bindsym $mod+F17 workspace $workspace15
+bindsym $mod+F18 workspace $workspace16
+bindsym $mod+F19 workspace $workspace17
+bindsym $mod+F20 workspace $workspace18
+bindsym $mod+F21 workspace $workspace19
+bindsym $mod+F22 workspace $workspace20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -132,6 +152,18 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+F13 move container to workspace $workspace11
+bindsym $mod+Shift+F14 move container to workspace $workspace12
+bindsym $mod+Shift+F15 move container to workspace $workspace13
+bindsym $mod+Shift+F16 move container to workspace $workspace14
+bindsym $mod+Shift+F17 move container to workspace $workspace15
+bindsym $mod+Shift+F18 move container to workspace $workspace16
+bindsym $mod+Shift+F19 move container to workspace $workspace17
+bindsym $mod+Shift+F20 move container to workspace $workspace18
+bindsym $mod+Shift+F21 move container to workspace $workspace19
+bindsym $mod+Shift+F22 move container to workspace $workspace20
+
+# find class with xprop
 
 assign [title="Hangouts"] $workspace4
 assign [class="Sublime_text"] $workspace3
@@ -252,9 +284,9 @@ bindsym $mod+o exec rofi -show run -lines 5 -eh 2 -width 100 -padding 430 -opaci
 
 
 #Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 1 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
