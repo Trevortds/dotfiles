@@ -9,6 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# find keycodes with xev and xmodmap -pke
+
 set $mod Mod4
 
 # This needs to be near the top so everything renders at the right size
@@ -130,16 +132,16 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
-bindsym $mod+F13 workspace $workspace11
-bindsym $mod+F14 workspace $workspace12
-bindsym $mod+F15 workspace $workspace13
-bindsym $mod+F16 workspace $workspace14
-bindsym $mod+F17 workspace $workspace15
-bindsym $mod+F18 workspace $workspace16
-bindsym $mod+F19 workspace $workspace17
-bindsym $mod+F20 workspace $workspace18
-bindsym $mod+F21 workspace $workspace19
-bindsym $mod+F22 workspace $workspace20
+bindsym $mod+Mod1+1 workspace $workspace11
+bindsym $mod+Mod1+2 workspace $workspace12
+bindsym $mod+Mod1+3 workspace $workspace13
+bindsym $mod+Mod1+4 workspace $workspace14
+bindsym $mod+Mod1+5 workspace $workspace15
+bindsym $mod+Mod1+6 workspace $workspace16
+bindsym $mod+Mod1+7 workspace $workspace17
+bindsym $mod+Mod1+8 workspace $workspace18
+bindsym $mod+Mod1+9 workspace $workspace19
+bindsym $mod+Mod1+0 workspace $workspace20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -152,16 +154,16 @@ bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
-bindsym $mod+Shift+F13 move container to workspace $workspace11
-bindsym $mod+Shift+F14 move container to workspace $workspace12
-bindsym $mod+Shift+F15 move container to workspace $workspace13
-bindsym $mod+Shift+F16 move container to workspace $workspace14
-bindsym $mod+Shift+F17 move container to workspace $workspace15
-bindsym $mod+Shift+F18 move container to workspace $workspace16
-bindsym $mod+Shift+F19 move container to workspace $workspace17
-bindsym $mod+Shift+F20 move container to workspace $workspace18
-bindsym $mod+Shift+F21 move container to workspace $workspace19
-bindsym $mod+Shift+F22 move container to workspace $workspace20
+bindsym $mod+Shift+Mod1+1 move container to workspace $workspace11
+bindsym $mod+Shift+Mod1+2 move container to workspace $workspace12
+bindsym $mod+Shift+Mod1+3 move container to workspace $workspace13
+bindsym $mod+Shift+Mod1+4 move container to workspace $workspace14
+bindsym $mod+Shift+Mod1+5 move container to workspace $workspace15
+bindsym $mod+Shift+Mod1+6 move container to workspace $workspace16
+bindsym $mod+Shift+Mod1+7 move container to workspace $workspace17
+bindsym $mod+Shift+Mod1+8 move container to workspace $workspace18
+bindsym $mod+Shift+Mod1+9 move container to workspace $workspace19
+bindsym $mod+Shift+Mod1+0 move container to workspace $workspace20
 
 # find class with xprop
 
@@ -172,6 +174,7 @@ for_window [class="Spotify"] move to workspace $workspace10
 assign [class="Slack"] $workspace4
 assign [class="Thunderbird"] $workspace7
 assign [class="Mullvad"] $workspace8
+assign [class="jetbrains-idea"] $workspace6
 
 
 # no borders in chrome
