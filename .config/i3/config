@@ -275,7 +275,7 @@ bar {
 }
 
 # Set lock to mod shift x
-bindsym $mod+l exec i3lock -c 000000
+bindsym $mod+l exec /home/trevor/.config/i3/lock.sh
 
 # move the whole workspace to next display
 bindsym $mod+comma move workspace to output left
@@ -325,6 +325,7 @@ exec subl
 exec slack
 exec discord
 exec dropbox start
+exec thunderbird
 exec nm-applet
 exec gksudo mullvad
 exec /usr/bin/spotify --force-device-scale-factor=1.5 &
