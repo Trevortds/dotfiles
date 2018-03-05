@@ -12,7 +12,7 @@
 set $mod Mod4
 
 # This needs to be near the top so everything renders at the right size
-exec_always xrandr --dpi 220
+exec_always xrandr --dpi 110
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -293,3 +293,4 @@ bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=\"Unity\" && unity-control-c
 
 exec_always /usr/bin/compton --config /home/trevor/.compton.conf
 exec_always feh --bg-scale /home/trevor/Pictures/hubble_orion.jpg 
+# exec_always redshift -v -t 4500:2500 -b 0.8:0.30
