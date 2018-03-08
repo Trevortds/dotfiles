@@ -284,7 +284,7 @@ bindsym $mod+shift+comma move workspace to output left
 bindsym $mod+shift+period move workspace to output right
 
 #dmenu replacement
-bindsym $mod+o exec rofi -show run -lines 5 -eh 2 -width 100 -padding 430 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym $mod+o exec rofi -show drun -lines 5 -eh 2 -width 100 -padding 430 -opacity "65" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
 
 
 #Pulse Audio controls
