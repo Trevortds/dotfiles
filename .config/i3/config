@@ -100,12 +100,9 @@ set $workspace3 "3: "
 set $workspace4 "4: "
 set $workspace5 "5: "
 set $workspace6 "6: "
-set $workspace5 "5: "
-set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
-set $workspace9 "9: "
 set $workspace10 "10: "
 set $workspace11 "11: "
 set $workspace12 "12: "
@@ -169,11 +166,15 @@ bindsym $mod+Shift+Mod1+0 move container to workspace $workspace20
 
 
 assign [title="Hangouts"] $workspace4
+assign [title="discord"] $workspace4
 assign [class="Sublime_text"] $workspace3
 #assign [class="Spotify"] $workspace10 doesn't work, workaround
 for_window [class="Spotify"] move to workspace $workspace10
 assign [class="Slack"] $workspace4
 assign [class="Thunderbird"] $workspace7
+assign [class="Mullvad"] $workspace8
+assign [class="jetbrains-idea"] $workspace6
+
 
 # no borders in chrome
 for_window [class="^Google-chrome$" title=" - Google Chrome$"] border none
@@ -242,7 +243,7 @@ mode $keyboardMode{
     bindsym Escape mode "default"
 }
 
-set $bg-color 	         #2f343f
+set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -339,4 +340,4 @@ bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=GNOME && gnome-control-cente
 
 
 exec_always /usr/bin/compton --config /home/trevor/.compton.conf
-exec_always feh --bg-max --no-xinerama /home/trevor/Pictures/BigWallpapers/3840x1080/Interdictor.jpg 
+exec_always feh --bg-max --no-xinerama /home/trevor/Pictures/BigWallpapers/3840x1080/Interdictor.jpg
