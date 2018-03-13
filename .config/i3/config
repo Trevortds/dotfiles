@@ -169,6 +169,7 @@ bindsym $mod+Shift+Mod1+0 move container to workspace $workspace20
 
 assign [title="Hangouts"] $workspace4
 assign [title="discord"] $workspace4
+assign [class="Signal"] $workspace4
 assign [class="Sublime_text"] $workspace3
 #assign [class="Spotify"] $workspace10 doesn't work, workaround
 for_window [class="Spotify"] move to workspace $workspace10
@@ -329,6 +330,7 @@ exec thunderbird
 exec nm-applet
 exec gksudo mullvad
 exec /usr/bin/spotify --force-device-scale-factor=1.5 &
+exec /opt/Signal/signal-desktop
 
 exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always xset r 66
