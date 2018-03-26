@@ -1,0 +1,31 @@
+{
+	"added_words":
+	[
+		"Colour",
+		"Readme",
+		"github",
+		"todo",
+		"https",
+		"md",
+		"ctrl"
+	],
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
+	"fade_fold_buttons": false,
+	"font_size": 10,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"rulers":
+	[
+		78
+	],
+	"spell_check": false,
+	"theme": "Boxy Ocean.sublime-theme",
+	"wrap_width": 80
+}
