@@ -332,7 +332,7 @@ exec gksudo mullvad
 exec /usr/bin/spotify  &
 
 #exec_always setxkbmap us -variant colemak -option caps:backspace
-exec_always setxkbmap us -option caps:backspace
+exec_always setxkbmap us -variant altgr-intl -option nodeadkeys -option caps:backspace
 exec_always xset r 66
 exec_always bash ~/.screenlayout/homelayout.sh
 
