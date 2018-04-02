@@ -234,7 +234,7 @@ bindsym $mod+r mode "resize"
 set $keyboardMode "keyboard q=qwerty c=colemak p=persian g=greek"
 bindsym $mod+shift+Return mode $keyboardMode
 mode $keyboardMode{
-    bindsym q exec setxkbmap us, mode "default"
+    bindsym q exec setxkbmap -layout us -variant altgr-intl -option nodeadkeys, mode "default"
     bindsym g exec setxkbmap gr, mode "default"
     bindsym p exec setxkbmap ir, mode "default"
     bindsym c exec setxkbmap us -variant colemak -option caps:backspace, mode "default"
