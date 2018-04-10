@@ -269,7 +269,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 bar {
         # status_command i3status
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        # tray_output primary
+        tray_output primary
         position top
 
     colors {
@@ -338,6 +338,7 @@ exec discord
 exec dropbox start
 exec thunderbird
 exec nm-applet
+exec pasystray
 exec gksudo mullvad
 exec /usr/bin/spotify --force-device-scale-factor=1.5 &
 exec /opt/Signal/signal-desktop
