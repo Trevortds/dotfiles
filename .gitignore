@@ -10,9 +10,6 @@
 !.config/
 !.config/i3/
 !.config/i3/*
-!.config/sublime-text-3/
-!.config/sublime-text-3/Packages/
-!.config/sublime-text-3/Packages/User/
-!.config/sublime-text-3/Packages/User/Preferences.sublime-settings
-!.config/dunst/
-!.config/dunst/dunstrc
+!.config/polybar/
+!.config/polybar/config
+!.config/polybar/launch.sh
