@@ -1,4 +1,4 @@
-# ignore everything 
+# ignore everything
 
 *
 
@@ -13,3 +13,12 @@
 !.config/polybar/
 !.config/polybar/config
 !.config/polybar/launch.sh
+!.config/polybar/info-hackspeed.sh
+!.config/polybar/openweathermap-fullfeatured.sh
+!.config/polybar/spotify
+!.config/sublime-text-3/
+!.config/sublime-text-3/Packages/
+!.config/sublime-text-3/Packages/User/
+!.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+!.config/dunst/
+!.config/dunst/dunstrc

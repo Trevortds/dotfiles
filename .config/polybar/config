@@ -9,16 +9,24 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+; background = #222
+; background-alt = #444
+; ;foreground = ${xrdb:color7:#222}
+; foreground = #dfdfdf
+; foreground-alt = #555
+; primary = #ffb52a
+; secondary = #e60053
+; alert = #bd2c40
+background = #2f343f
+background-alt = #2f343f
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+primary = #A1C489
+secondary = #33774E
+alert = #9E2A2B
 
-[bar/bar1]
+[bar/bigbar]
 monitor = ${env:MONITOR:eDP-1-1}
 width = 100%
 height = 36
@@ -40,39 +48,101 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 ; font-0 = fixed:pixelsize=10;1
-; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-; font-2 = siji:pixelsize=10;1
 
-font-0 = "Inconsolata:size=22;0"
-font-1 = "FontAwesome:size=22;0"
+font-0 = "Inconsolata:size=10;0"
+font-1 = "FontAwesome:size=9;0"
+font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
+font-3 = "siji:pixelsize=10;1"
+font-4 = "Weather Icons:size=12;1"
 
 modules-left = i3
-modules-center = mpd
-modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-center = spotify
+modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu wlan eth temperature date powermenu
 
-tray-position = right
-tray-padding = 2
-tray-maxsize = 22
-;tray-transparent = true
-;tray-background = #0063ff
+i3-pin-workspaces = false
+
+
+tray-position =
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+[bar/traybar]
+monitor = ${env:MONITOR:eDP-1-1}
+width = 100%
+height = 36
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 1
+border-color = $colors.background-alt
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+; font-0 = fixed:pixelsize=10;1
+
+font-0 = "Inconsolata:size=10;0"
+font-1 = "FontAwesome:size=9;0"
+font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
+font-3 = "siji:pixelsize=10;1"
+font-4 = "Weather Icons:size=12;1"
+
+modules-left = i3
+modules-center = spotify
+modules-right = info-hackspeed filesystem volume xkeyboard memory cpu wlan eth temperature date powermenu
+
+i3-pin-workspaces = true
+
+tray-position = right
+tray-padding = 1
+; tray-maxsize = 22
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+[module/openweathermap-fullfeatured]
+type = custom/script
+exec = ~/.config/polybar/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 5
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -127,7 +197,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+pin-workspaces = ${root.i3-pin-workspaces}
 
 ; Split workspace name on :
 strip-wsnumbers = false
@@ -175,6 +245,24 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = /home/trevor/.config/polybar/spotify
+
+click-left = xdotool key XF86AudioPrev
+click-right = xdotool key XF86AudioNext
+click-middle = xdotool key XF86AudioPlay
+
+format-underline = #1db954
+
+[module/info-hackspeed]
+type = custom/script
+exec = ~/.config/polybar/info-hackspeed.sh
+tail = true
+
 [module/xbacklight]
 type = internal/xbacklight
 
@@ -215,7 +303,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp4s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -324,10 +412,10 @@ animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 10
+thermal-zone = 2
 warn-temperature = 60
 
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
 
 format = <ramp> <label>
 format-underline = #f50a4d
@@ -349,9 +437,9 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.alert}
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.alert}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
