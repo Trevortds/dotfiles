@@ -29,7 +29,7 @@ alert = #9E2A2B
 [bar/bigbar]
 monitor = ${env:MONITOR:eDP-1-1}
 width = 100%
-height = 36
+height = 46
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -52,17 +52,17 @@ module-margin-right = 1
 
 ; font-0 = fixed:pixelsize=10;1
 
-font-0 = "Inconsolata:size=10;0"
-font-1 = "FontAwesome:size=9;0"
-font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
-font-3 = "siji:pixelsize=10;1"
-font-4 = "Weather Icons:size=12;1"
+font-0 = "Inconsolata:size=20;0"
+font-1 = "FontAwesome:size=19;0"
+font-2 = "unifont:fontformat=truetype:size=18:antialias=false;0"
+font-3 = "siji:pixelsize=20;1"
+font-4 = "Weather Icons:size=20;1"
 
 modules-left = i3
 modules-center = spotify
-modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu wlan eth temperature date powermenu
+modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu wlan eth temperature battery date powermenu
 
-i3-pin-workspaces = false
+i3-pin-workspaces = true
 
 
 tray-position =
@@ -82,7 +82,7 @@ scroll-down = i3wm-wsprev
 [bar/traybar]
 monitor = ${env:MONITOR:eDP-1-1}
 width = 100%
-height = 36
+height = 45
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 6.0
@@ -105,21 +105,21 @@ module-margin-right = 1
 
 ; font-0 = fixed:pixelsize=10;1
 
-font-0 = "Inconsolata:size=10;0"
-font-1 = "FontAwesome:size=9;0"
-font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
-font-3 = "siji:pixelsize=10;1"
-font-4 = "Weather Icons:size=12;1"
+font-0 = "Inconsolata:size=22;0"
+font-1 = "FontAwesome:size=21;0"
+font-2 = "unifont:fontformat=truetype:size=20:antialias=false;0"
+font-3 = "siji:pixelsize=21;1"
+font-4 = "Weather Icons:size=22;1"
 
 modules-left = i3
 modules-center = spotify
-modules-right = info-hackspeed filesystem volume xkeyboard memory cpu wlan eth temperature date powermenu
+modules-right = info-hackspeed filesystem volume xkeyboard memory cpu wlan eth temperature battery date powermenu
 
-i3-pin-workspaces = true
+i3-pin-workspaces = false
 
 tray-position = right
 tray-padding = 1
-; tray-maxsize = 22
+tray-maxsize = 22
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -133,6 +133,59 @@ wm-restack = i3
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
+[bar/minibar]
+monitor = ${env:MONITOR:eDP-1-1}
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 1
+border-color = $colors.background-alt
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+; font-0 = fixed:pixelsize=10;1
+
+font-0 = "Inconsolata:size=9;0"
+font-1 = "FontAwesome:size=8;0"
+font-2 = "unifont:fontformat=truetype:size=7:antialias=false;0"
+font-3 = "siji:pixelsize=8;1"
+font-4 = "Weather Icons:size=8;1"
+
+modules-left = i3
+modules-center =
+modules-right = info-hackspeed xkeyboard memory cpu wlan eth temperature battery date
+
+i3-pin-workspaces = true
+
+
+tray-position =
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -303,7 +356,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -424,7 +477,7 @@ format-warn-underline = ${self.format-underline}
 
 label = %temperature%
 label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.alert}
 
 ramp-0 = 
 ramp-1 = 
