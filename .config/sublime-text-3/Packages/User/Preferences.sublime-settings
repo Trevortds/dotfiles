@@ -9,6 +9,7 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"SublimeLinter-pep8",
 		"Vintage"
 	],
 	"line_padding_bottom": 1,
