@@ -7,7 +7,7 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bullet-train"
+ZSH_THEME="agnosterzak"
 
 # themes I like
 # amuse
@@ -120,7 +120,7 @@ alias zshconfig="mate ~/.zshrc"
 
 # agnoster don't show hostname when logged in as self
 DEFAULT_USER=trevor
-prompt_context(){}
+# prompt_context(){}
 
 # zsh powerline
 #. /opt/anaconda/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
