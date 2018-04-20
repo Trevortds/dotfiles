@@ -183,7 +183,8 @@ assign [class="jetbrains-idea"] $workspace6
 # no borders in chrome
 for_window [class="^Google-chrome$" title=" - Google Chrome$"] border none
 
-
+# no borders anywhere
+new_window 1pixel
 
 
 # reload the configuration file
