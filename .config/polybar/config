@@ -60,7 +60,7 @@ font-4 = "Weather Icons:size=20;1"
 
 modules-left = i3
 modules-center = spotify
-modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu wlan eth temperature battery date powermenu
+modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu wlan eth temperature battery time-MUC date powermenu
 
 i3-pin-workspaces = true
 
@@ -113,7 +113,7 @@ font-4 = "Weather Icons:size=22;1"
 
 modules-left = i3
 modules-center = spotify
-modules-right = filesystem volume xkeyboard memory cpu eth temperature battery date powermenu
+modules-right = filesystem volume xkeyboard memory cpu eth temperature battery time-MUC date powermenu
 
 i3-pin-workspaces = true
 
@@ -168,7 +168,7 @@ font-4 = "Weather Icons:size=8;1"
 
 modules-left = i3
 modules-center =
-modules-right = info-hackspeed xkeyboard memory cpu wlan eth temperature battery date
+modules-right = info-hackspeed xkeyboard memory cpu wlan eth temperature battery time-MUC date
 
 i3-pin-workspaces = true
 
@@ -391,6 +391,15 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/time-MUC]
+type = custom/script
+exec = TZ=Europe/Munich date +"MUC %H:%M"
+interval = 5
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
 
 [module/date]
 type = internal/date
