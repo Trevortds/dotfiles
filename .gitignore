@@ -7,6 +7,7 @@
 !.bash_aliases
 !.compton.conf
 !.i3status.conf
+!.zshrc
 !.config/
 !.config/i3/
 !.config/i3/*
