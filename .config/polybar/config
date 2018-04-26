@@ -405,8 +405,8 @@ format-underline = #0a6cf5
 type = internal/date
 interval = 5
 
-date = ""
-date-alt = " %Y-%m-%d"
+date = " %Y-%m-%d"
+date-alt = ""
 
 time = %H:%M:%S
 time-alt = %H:%M:%S
