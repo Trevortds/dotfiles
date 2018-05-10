@@ -26,7 +26,9 @@ primary = #A1C489
 secondary = #33774E
 alert = #9E2A2B
 
-[bar/bigbar]
+
+
+[bar/generalbar]
 monitor = ${env:MONITOR:eDP-1-1}
 width = 100%
 height = 46
@@ -79,86 +81,30 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 
+
+[bar/bigbar]
+inherit=bar/generalbar
+
+modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature gpu-temp battery wlan eth time-MUC date powermenu
+
+tray-position =
+
+
 [bar/traybar]
-monitor = ${env:MONITOR:eDP-1-1}
-width = 100%
-height = 45
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
+inherit=bar/generalbar
 
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 1
-border-color = $colors.background-alt
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 1
-
-; font-0 = fixed:pixelsize=10;1
-
-font-0 = "Inconsolata:size=22;0"
-font-1 = "FontAwesome:size=21;0"
-font-2 = "unifont:fontformat=truetype:size=20:antialias=false;0"
-font-3 = "Siji:pixelsize=25;1"
-font-4 = "Weather Icons:size=22;1"
-
-modules-left = i3
-modules-center = spotify
-modules-right = filesystem volume xkeyboard memory cpu eth temperature battery time-MUC date powermenu
+modules-right = filesystem volume xkeyboard memory cpu temperature battery eth time-MUC date powermenu
 
 i3-pin-workspaces = true
 
 tray-position = right
 tray-padding = 1
 tray-maxsize = 26
-;tray-transparent = true
-;tray-background = #0063ff
 
-;wm-restack = bspwm
-wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
 
 [bar/minibar]
-monitor = ${env:MONITOR:eDP-1-1}
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 1
-border-color = $colors.background-alt
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 1
-
-; font-0 = fixed:pixelsize=10;1
+inherit=bar/generalbar
+height=30
 
 font-0 = "Inconsolata:size=9;0"
 font-1 = "FontAwesome:size=8;0"
@@ -166,25 +112,15 @@ font-2 = "unifont:fontformat=truetype:size=7:antialias=false;0"
 font-3 = "siji:size=10;0"
 font-4 = "Weather Icons:size=8;1"
 
-modules-left = i3
 modules-center =
-modules-right = info-hackspeed xkeyboard memory cpu wlan eth temperature battery time-MUC date
-
-i3-pin-workspaces = true
+modules-right = info-hackspeed xkeyboard memory cpu temperature battery wlan eth time-MUC date
 
 
-tray-position =
+[bar/onlybar]
+inherit=bar/traybar
 
-;wm-restack = bspwm
-wm-restack = i3
+modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature gpu-temp battery wlan eth time-MUC date powermenu
 
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
 
 
 [module/xwindow]
@@ -346,6 +282,23 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage%%
 
+[module/gpu-util]
+# these don't seem to work
+type = custom/script
+exec = nvidia-smi stats -d gpuUtil  | cut -d "," -f4
+tail = true
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+
+[module/gpu-temp]
+type = custom/script
+exec = nvidia-smi stats -d temp  | cut -d "," -f4
+tail = true
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+
 [module/memory]
 type = internal/memory
 interval = 2
@@ -394,12 +347,13 @@ format-disconnected =
 
 [module/time-MUC]
 type = custom/script
-exec = TZ=Europe/Munich date +"MUC %H:%M"
+exec = TZ=Europe/Berlin date +"MUC %H:%M"
 interval = 5
 
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
+
 
 [module/date]
 type = internal/date

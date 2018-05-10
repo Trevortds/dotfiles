@@ -14,7 +14,7 @@
 set $mod Mod4
 
 # This needs to be near the top so everything renders at the right size
-exec_always xrandr --dpi 220
+exec_always xrandr --dpi 200
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -336,6 +336,11 @@ exec_always --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
 exec_always notify-send "Started i3"
 
+# authenticator
+
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+
 exec google-chrome
 exec subl
 exec slack
@@ -348,6 +353,7 @@ exec gksudo mullvad
 exec /usr/bin/spotify --force-device-scale-factor=1.5 &
 exec /usr/local/bin/signal-desktop
 exec /usr/local/bin/riot-web
+exec export QT_DEVICE_PIXEL_RATIO=2 && /opt/toggldesktop/TogglDesktop.sh
 
 exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always xset r 66

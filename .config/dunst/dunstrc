@@ -1,5 +1,5 @@
 [global]
-    font = "Droid Sans 25"
+    font = "Droid Sans 15"
     allow_markup = yes
     format = "%a\n<b>%s</b>\n%b"
     sort = yes
