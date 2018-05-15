@@ -247,6 +247,34 @@ mode $keyboardMode{
     bindsym Escape mode "default"
 }
 
+# Settings for switching monitor
+set $displaychangemode "display n=normal w=windowsvmmode"
+bindsym $mod+BackSpace mode $displaychangemode
+mode $displaychangemode{
+    bindsym n exec bash ~/.screenlayout/homelayout.sh, mode "default"
+    bindsym w exec bash ~/.screenlayout/winvmlayout.sh, mode "default"
+    bindsym space mode "default"
+    # back to normal: enter or escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Settings for taking screenshot
+set $screenshotmode "screenshot r=redo_last s=selection a=active_window f=fullscreen m=menu t=tooltip"
+bindsym Print mode $screenshotmode
+mode $screenshotmode{
+    bindrym r exec shutter --redo
+    bindsym s exec shutter --select
+    bindsym a exec shutter --active
+    bindsym f exec shutter --full
+    bindsym m exec shutter --menu
+    bindsym t exec shutter --tooltip
+    bindsym space mode "default"
+    # back to normal: enter or escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
@@ -325,10 +353,6 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# screenshot
-bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym Mod1+Print exec scrot -u $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym Mod1+shift+Print exec scrot -s $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 
 # notifications engine
 exec_always --no-startup-id killall dunst &&  dunst -config $HOME/.config/dunst/dunstrc
