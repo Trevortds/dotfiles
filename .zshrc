@@ -138,8 +138,4 @@ eval $(thefuck --alias)
 
 export LC_ALL=en_US.utf-8
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+export PATH="/home/trevor/anaconda3/bin:$PATH"
