@@ -113,7 +113,7 @@ font-3 = "siji:size=10;0"
 font-4 = "Weather Icons:size=8;1"
 
 modules-center =
-modules-right = info-hackspeed xkeyboard memory cpu temperature battery wlan eth time-MUC date
+modules-right =  xkeyboard memory cpu temperature battery wlan eth time-MUC date
 
 
 [bar/onlybar]
