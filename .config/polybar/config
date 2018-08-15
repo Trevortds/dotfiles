@@ -85,7 +85,7 @@ scroll-down = i3wm-wsprev
 [bar/bigbar]
 inherit=bar/generalbar
 
-modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature gpu-temp battery wlan eth time-MUC date powermenu
+modules-right = openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature gpu-temp battery wlan eth time-MUC date powermenu
 
 tray-position =
 
@@ -119,7 +119,7 @@ modules-right = info-hackspeed xkeyboard memory cpu temperature battery wlan eth
 [bar/onlybar]
 inherit=bar/traybar
 
-modules-right = info-hackspeed openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature gpu-temp battery wlan eth time-MUC date powermenu
+modules-right = openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature gpu-temp battery wlan eth time-MUC date powermenu
 
 
 
