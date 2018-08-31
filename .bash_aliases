@@ -65,8 +65,8 @@ alias update='sudo apt-get update && sudo apt-get upgrade'
 alias df='df -H'
 alias du='du -ch'
 
-# top is atop, just like vi is vim
-alias top='atop'
+# top is htop, just like vi is vim
+alias top='sudo htop'
 
 alias jup='jupyter notebook'
 
@@ -74,4 +74,13 @@ alias shutup='pkill -u "$USER" -USR1 dunst'
 alias spititout='pkill -u "$USER" -USR2 dunst'
 
 alias open='xdg-open &>/dev/null'
+
+# https://remysharp.com/2018/08/23/cli-improved
+alias cat='bat'
+alias ping='prettyping --nolegend'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+# add support for ctrl+o to open selected file in subl
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(subl {})+abort'"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias help='tldr'
 

@@ -138,4 +138,8 @@ eval $(thefuck --alias)
 
 export LC_ALL=en_US.utf-8
 
-export PATH="/home/trevor/anaconda3/bin:$PATH"
+export PATH="/home/trevor/anaconda3/bin:/home/trevor/src:$PATH"
+
+source /home/trevor/.bash_aliases
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
