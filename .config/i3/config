@@ -178,6 +178,8 @@ assign [class="Slack"] $workspace4
 assign [class="Thunderbird"] $workspace7
 assign [class="Mullvad"] $workspace8
 assign [class="jetbrains-idea"] $workspace6
+assign [class="SpiderOakONE"] $workspace20
+assign [class="TogglDesktop"] $workspace19
 
 
 # no borders in chrome
@@ -351,11 +353,11 @@ exec nm-applet
 exec pasystray
 exec gksudo mullvad
 exec /usr/bin/spotify --force-device-scale-factor=1.5 &
-exec /usr/local/bin/signal-desktop
-exec /usr/local/bin/riot-web
 exec export QT_DEVICE_PIXEL_RATIO=2 && /opt/toggldesktop/TogglDesktop.sh
+exec SpiderOakONE
 
-exec_always setxkbmap us -variant colemak -option caps:backspace
+exec_always setxkbmap -layout us -variant altgr-intl -option nodeadkeys
+# exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always xset r 66
 # exec_always xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
 # exec_always xrandr --output HDMI-1 --mode 1920x1080 --pos 13x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
