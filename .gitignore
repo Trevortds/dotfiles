@@ -23,3 +23,4 @@
 !.config/sublime-text-3/Packages/User/Preferences.sublime-settings
 !.config/dunst/
 !.config/dunst/dunstrc
+!.gconf/
