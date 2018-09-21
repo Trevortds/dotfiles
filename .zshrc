@@ -129,9 +129,8 @@ DEFAULT_USER=trevor
 
 ssh-add .ssh/trevor_ayfie_rsa               
 
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"                                        
 
-source /home/trevor/src/conda-auto-env-master/conda_auto_env_remote.sh                  
+source /home/trevor/src/conda-auto-env/conda_auto_env_remote.sh                  
 precmd() {eval "$PROMPT_COMMAND"}
 
 eval $(thefuck --alias)  
