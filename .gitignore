@@ -1,4 +1,4 @@
-# ignore everything 
+# ignore everything
 
 *
 
@@ -7,10 +7,56 @@
 !.bash_aliases
 !.compton.conf
 !.i3status.conf
+!.zshrc
 !.config/
 !.config/i3/
 !.config/i3/*
+!.config/polybar/
+!.config/polybar/config
+!.config/polybar/launch.sh
+!.config/polybar/info-hackspeed.sh
+!.config/polybar/openweathermap-fullfeatured.sh
+!.config/polybar/spotify
 !.config/sublime-text-3/
 !.config/sublime-text-3/Packages/
 !.config/sublime-text-3/Packages/User/
 !.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+!.config/dunst/
+!.config/dunst/dunstrc
+!.gconf/
+!.gconf/apps/
+!.gconf/apps/%gconf.xml
+!.gconf/apps/SoundConverter/
+!.gconf/apps/SoundConverter/%gconf.xml
+!.gconf/apps/fluxgui/
+!.gconf/apps/fluxgui/%gconf.xml
+!.gconf/apps/gnome-terminal/
+!.gconf/apps/gnome-terminal/%gconf.xml
+!.gconf/apps/gnome-terminal/profiles/
+!.gconf/apps/gnome-terminal/profiles/%gconf.xml
+!.gconf/apps/gnome-terminal/profiles/Default/
+!.gconf/apps/gnome-terminal/profiles/Default/%gconf.xml
+!.gconf/apps/hamster-applet/
+!.gconf/apps/hamster-applet/%gconf.xml
+!.gconf/apps/nm-applet/
+!.gconf/apps/nm-applet/%gconf.xml
+!.gconf/desktop/
+!.gconf/desktop/%gconf.xml
+!.gconf/desktop/gnome/
+!.gconf/desktop/gnome/%gconf.xml
+!.gconf/desktop/gnome/applications/
+!.gconf/desktop/gnome/applications/%gconf.xml
+!.gconf/desktop/gnome/applications/browser/
+!.gconf/desktop/gnome/applications/browser/%gconf.xml
+!.gconf/desktop/gnome/url-handlers/
+!.gconf/desktop/gnome/url-handlers/%gconf.xml
+!.gconf/desktop/gnome/url-handlers/about/
+!.gconf/desktop/gnome/url-handlers/about/%gconf.xml
+!.gconf/desktop/gnome/url-handlers/http/
+!.gconf/desktop/gnome/url-handlers/http/%gconf.xml
+!.gconf/desktop/gnome/url-handlers/https/
+!.gconf/desktop/gnome/url-handlers/https/%gconf.xml
+!.gconf/desktop/gnome/url-handlers/mailto/
+!.gconf/desktop/gnome/url-handlers/mailto/%gconf.xml
+!.gconf/desktop/gnome/url-handlers/unknown/
+!.gconf/desktop/gnome/url-handlers/unknown/%gconf.xml
