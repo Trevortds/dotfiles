@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<gconf>
-	<entry name="workspace_tracking" mtime="1491772333" type="list" ltype="string">
-	</entry>
-	<entry name="stop_on_shutdown" mtime="1491772293" type="bool" value="true"/>
-	<entry name="activities_source" mtime="1491772290" type="string">
-		<stringvalue></stringvalue>
-	</entry>
-</gconf>
