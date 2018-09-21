@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="output-mime-type" mtime="1447335499" type="string">
+		<stringvalue>audio/mpeg</stringvalue>
+	</entry>
+</gconf>
