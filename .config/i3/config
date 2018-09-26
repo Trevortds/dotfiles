@@ -343,7 +343,7 @@ exec_always notify-send "Started i3"
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
 
-exec google-chrome
+exec firefox
 exec subl
 exec slack
 exec discord
