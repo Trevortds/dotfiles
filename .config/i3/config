@@ -168,7 +168,7 @@ bindsym $mod+Shift+Mod1+0 move container to workspace $workspace20
 # find class with xprop
 
 assign [title="Hangouts"] $workspace4
-assign [name="Google Hangouts - trevortds3@gmail.com"] $workspace4
+assign [title="Google Hangouts - trevortds3@gmail.com"] $workspace4
 assign [class="discord"] $workspace14
 assign [class="Signal"] $workspace14
 assign [class="Riot"] $workspace14
