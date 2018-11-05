@@ -143,3 +143,5 @@ export PATH="/home/trevor/anaconda3/bin:/home/trevor/src:$PATH"
 source /home/trevor/.bash_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export EDITOR=/usr/bin/vim
