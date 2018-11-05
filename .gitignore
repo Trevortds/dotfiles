@@ -11,6 +11,7 @@
 !.config/
 !.config/i3/
 !.config/i3/*
+.config/i3/secrets
 !.config/polybar/
 !.config/polybar/config
 !.config/polybar/launch.sh
