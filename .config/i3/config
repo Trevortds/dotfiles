@@ -166,7 +166,9 @@ bindsym $mod+Shift+Mod1+0 move container to workspace $workspace20
 
 
 assign [title="Hangouts"] $workspace4
-assign [title="discord"] $workspace4
+assign [class="discord"] $workspace14
+assign [class="Signal"] $workspace14
+assign [class="Riot"] $workspace14
 assign [class="Sublime_text"] $workspace3
 #assign [class="Spotify"] $workspace10 doesn't work, workaround
 for_window [class="Spotify"] move to workspace $workspace10
@@ -369,6 +371,8 @@ exec thunderbird
 exec nm-applet
 exec pasystray
 exec gksudo mullvad
+exec export QT_DEVICE_PIXEL_RATIO=2 && /opt/toggldesktop/TogglDesktop.sh
+
 exec /usr/bin/spotify  &
 exec /opt/Signal/signal-desktop
 
