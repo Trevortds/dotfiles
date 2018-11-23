@@ -113,7 +113,7 @@ font-4 = "Weather Icons:size=12;1"
 
 modules-left = i3
 modules-center = spotify
-modules-right = info-hackspeed filesystem xkeyboard memory cpu wlan eth temperature date
+modules-right = info-hackspeed filesystem xkeyboard memory cpu wlan eth temperature date-small
 
 i3-pin-workspaces = true
 
@@ -169,7 +169,7 @@ font-4 = "Weather Icons:size=12;1"
 
 modules-left = i3
 modules-center = spotify
-modules-right = info-hackspeed filesystem xkeyboard memory cpu eth temperature date
+modules-right = info-hackspeed filesystem xkeyboard memory cpu eth temperature date-small
 
 i3-pin-workspaces = true
 
@@ -397,6 +397,22 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
+type = internal/date
+interval = 5
+
+date = " %Y-%m-%d"
+date-alt = ""
+
+time = %H:%M:%S
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[module/date-small]
 type = internal/date
 interval = 5
 
