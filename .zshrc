@@ -137,3 +137,4 @@ precmd() {eval "$PROMPT_COMMAND"}
 eval $(thefuck --alias)  
 
 export LC_ALL=en_US.utf-8
+export PATH="/home/trevor/anaconda3/bin:$PATH"
