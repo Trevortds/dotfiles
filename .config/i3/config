@@ -366,11 +366,13 @@ exec_always /home/trevor/.screenlayout/office.sh
 bindsym $mod+BackSpace exec "xrandr --output DP-1-1-2 --off  --output DP-1-2-2 --off"
 bindsym $mod+shift+BackSpace exec "/home/trevor/.screenlayout/office.sh && $HOME/.config/polybar/launch.sh"
 
-exec_always xinput set-prop 16 "Synaptics Palm Detection" 1
-exec_always xinput set-prop 16 "Synaptics Palm Dimensions" 5, 5
+exec_always xinput set-prop 22 "Synaptics Palm Detection" 1
+exec_always xinput set-prop 22 "Synaptics Palm Dimensions" 5, 5
 
 #open settings
 bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=GNOME && gnome-control-center
+
+exec xautolock -time 15 -locker '/home/trevor/.config/i3/lock.sh' &
 
 exec_always /usr/bin/compton --config /home/trevor/.compton.conf
 exec_always feh --bg-scale /home/trevor/Pictures/hubble_orion.jpg
