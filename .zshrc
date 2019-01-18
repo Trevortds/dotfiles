@@ -62,8 +62,8 @@ ZSH_THEME="agnosterzak"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # settings for tmux. must go before plugins
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=false
+ZSH_TMUX_AUTOSTART=false
+ZSH_TMUX_AUTOCONNECT=true
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
