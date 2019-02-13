@@ -128,6 +128,7 @@ DEFAULT_USER=trevor
 
 
 ssh-add .ssh/trevor_ayfie_rsa               
+ssh-add .ssh/trevor_ayfie_ec
 
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"                                        
 
