@@ -350,6 +350,7 @@ exec slack
 exec discord
 exec thunderbird
 exec nm-applet
+exec blueman-applet
 exec pasystray
 exec gksudo mullvad
 exec /usr/bin/spotify --force-device-scale-factor=1.5 &
