@@ -85,7 +85,7 @@ scroll-down = i3wm-wsprev
 [bar/bigbar]
 inherit=bar/generalbar
 
-modules-right = openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature gpu-temp battery wlan eth time-MUC date powermenu
+modules-right = openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature battery wlan eth time-MUC date powermenu
 
 tray-position =
 
