@@ -127,6 +127,7 @@ DEFAULT_USER=trevor
 #
 
 
+ssh-add .ssh/trevor_ayfie_ec               
 ssh-add .ssh/trevor_ayfie_rsa               
 
 
