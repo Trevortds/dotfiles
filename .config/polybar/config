@@ -87,7 +87,9 @@ inherit=bar/generalbar
 
 modules-right = openweathermap-fullfeatured filesystem volume xkeyboard memory cpu temperature battery wlan eth time-MUC date powermenu
 
-tray-position =
+tray-position = right
+tray-padding = 1
+tray-maxsize = 26
 
 
 [bar/traybar]

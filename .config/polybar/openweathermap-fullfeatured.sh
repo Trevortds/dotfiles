@@ -38,7 +38,7 @@ get_duration() {
 }
 
 KEY="$OWMKEY"
-CITY="5128581"
+CITY="5419384"
 UNITS="imperial"
 SYMBOL="°"
 
