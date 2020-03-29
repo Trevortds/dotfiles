@@ -11,7 +11,8 @@
 	[
 		"SublimeLinter",
 		"SublimeLinter-pep8",
-		"Vintage"
+		"Vintage",
+		"zzz A File Icon zzz"
 	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,

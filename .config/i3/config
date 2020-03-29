@@ -352,7 +352,7 @@ exec thunderbird
 exec nm-applet
 exec blueman-applet
 exec pasystray
-exec gksudo mullvad
+exec mullvad
 exec /usr/bin/spotify --force-device-scale-factor=1.5 &
 exec export QT_DEVICE_PIXEL_RATIO=2 && /opt/toggldesktop/TogglDesktop.sh
 exec SpiderOakONE
@@ -364,7 +364,7 @@ exec_always xset r 66
 # exec_always xrandr --output HDMI-1 --mode 1920x1080 --pos 13x0 --rotate normal --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
 exec_always /home/trevor/.screenlayout/office.sh
 
-bindsym $mod+BackSpace exec "xrandr --output DP-1-1-2 --off  --output DP-1-2-2 --off"
+bindsym $mod+BackSpace exec "xrandr --output DP-1-1-2 --off  --output DP-1-2-2 --off --output DP-1-2-1 --off"
 bindsym $mod+shift+BackSpace exec "/home/trevor/.screenlayout/office.sh && $HOME/.config/polybar/launch.sh"
 
 exec_always xinput set-prop 22 "Synaptics Palm Detection" 1
