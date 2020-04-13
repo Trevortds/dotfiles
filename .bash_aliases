@@ -69,3 +69,9 @@ alias du='du -ch'
 alias top='atop'
 
 alias jup='jupyter notebook'
+
+alias shutup='pkill -u "$USER" -USR1 dunst'
+alias spititout='pkill -u "$USER" -USR2 dunst'
+
+alias open='xdg-open &>/dev/null'
+

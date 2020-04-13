@@ -128,6 +128,8 @@ DEFAULT_USER=trevor
 
 
 ssh-add .ssh/trevor_ayfie_rsa               
+ssh-add .ssh/trevor_ayfie_ec 
+
 
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"                                        
 
@@ -137,4 +139,9 @@ precmd() {eval "$PROMPT_COMMAND"}
 eval $(thefuck --alias)  
 
 export LC_ALL=en_US.utf-8
+# added by Anaconda3 4.1.1 installer
 export PATH="/home/trevor/anaconda3/bin:$PATH"
+source /home/trevor/src/conda-auto-env-master/conda_auto_env.sh
+
+# Created by `userpath` on 2020-04-09 17:58:50
+export PATH="$PATH:/home/trevor/.local/bin"

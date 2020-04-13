@@ -166,7 +166,7 @@ bindsym $mod+Shift+Mod1+0 move container to workspace $workspace20
 
 
 assign [title="Hangouts"] $workspace4
-assign [class="discord"] $workspace14
+assign [class="discord"] $workspace4
 assign [class="Signal"] $workspace14
 assign [class="Riot"] $workspace14
 assign [class="Sublime_text"] $workspace3
@@ -176,6 +176,9 @@ assign [class="Slack"] $workspace4
 assign [class="Thunderbird"] $workspace7
 assign [class="Mullvad"] $workspace8
 assign [class="jetbrains-idea"] $workspace6
+assign [class="SpiderOakONE"] $workspace20
+assign [class="TogglDesktop"] $workspace19
+
 
 
 # no borders in chrome
@@ -363,15 +366,17 @@ exec_always notify-send "Started i3"
 
 
 exec google-chrome
+exec firefox
 exec subl
-exec slack
+# exec slack
 exec discord
 exec dropbox start
 exec thunderbird
 exec nm-applet
 exec pasystray
-exec gksudo mullvad
-exec export QT_DEVICE_PIXEL_RATIO=2 && /opt/toggldesktop/TogglDesktop.sh
+# exec gksudo mullvad
+exec /opt/toggldesktop/TogglDesktop.sh
+exec SpiderOakONE
 
 exec /usr/bin/spotify  &
 exec /opt/Signal/signal-desktop
@@ -381,6 +386,9 @@ exec /opt/Signal/signal-desktop
 exec_always setxkbmap us -variant altgr-intl -option nodeadkeys -option caps:backspace
 exec_always xset r 66
 exec_always bash ~/.screenlayout/homelayout.sh
+
+# for redshift
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/where-am-i
 
 #open settings
 bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=GNOME && gnome-control-center
