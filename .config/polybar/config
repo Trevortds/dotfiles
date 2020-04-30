@@ -57,9 +57,11 @@ font-1 = "FontAwesome:size=9;0"
 font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
 font-3 = "siji:pixelsize=10;1"
 font-4 = "Weather Icons:size=12;1"
+font-5 = "Noto Color Emoji:pixelsize=10:style=Regular:scale=10;2"
+
 
 modules-left = i3
-modules-center = spotify
+modules-center = polypomo
 modules-right = openweathermap-fullfeatured filesystem xkeyboard memory cpu wlan eth temperature date powermenu
 
 i3-pin-workspaces = true
@@ -110,6 +112,8 @@ font-1 = "FontAwesome:size=9;0"
 font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
 font-3 = "siji:pixelsize=10;1"
 font-4 = "Weather Icons:size=12;1"
+font-5 = "Noto Color Emoji:pixelsize=10:style=Regular:scale=10;2"
+
 
 modules-left = i3
 modules-center = spotify
@@ -167,6 +171,7 @@ font-1 = "FontAwesome:size=9;0"
 font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
 font-3 = "siji:pixelsize=10;1"
 font-4 = "Weather Icons:size=12;1"
+font-5 = "Noto Color Emoji:pixelsize=16:style=Regular;2"
 
 modules-left = i3
 modules-center = spotify
@@ -192,9 +197,71 @@ scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 
+[bar/bottombar]
+monitor = ${env:MONITOR:eDP-1-1}
+bottom = true
+width = 100%
+height = 36
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = $colors.background-alt
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+; font-0 = fixed:pixelsize=10;1
+
+font-0 = "Inconsolata:size=10;0"
+font-1 = "FontAwesome:size=9;0"
+font-2 = "unifont:fontformat=truetype:size=8:antialias=false;0"
+font-3 = "siji:pixelsize=10;1"
+font-4 = "Weather Icons:size=12;1"
+font-5 = "Noto Color Emoji:pixelsize=10:style=Regular:scale=10;2"
+font-6 = "Roboto Condensed:size=5:style=Regular;6"
+
+
+modules-left = toggl
+; modules-center = spotify
+; modules-right = filesystem xkeyboard memory cpu system-nvidia-smi wlan eth temperature date-small
+
+
+
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+
+[module/toggl]
+type = custom/script
+interval = 3
+exec = node /home/trevor/src/toggl-timetracking-polybar-module/queryToggl.js
+label-font = 5
+
+[module/polypomo]
+type = custom/script
+
+exec = ~/.config/polybar/polypomo
+tail = true
+
+label = %output%
+click-left = ~/.config/polybar/polypomo toggle
+click-right = ~/.config/polybar/polypomo end
+click-middle = ~/.config/polybar/polypomo lock
+scroll-up = ~/.config/polybar/polypomo time +60
+scroll-down = ~/.config/polybar/polypomo time -60
 
 [module/openweathermap-fullfeatured]
 type = custom/script

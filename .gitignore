@@ -15,6 +15,8 @@
 !.config/polybar/config
 !.config/polybar/launch.sh
 !.config/polybar/info-hackspeed.sh
+!.config/polybar/polypomo
+!.config/polybar/system-nvidia-smi.sh
 !.config/polybar/openweathermap-fullfeatured.sh
 !.config/polybar/spotify
 !.config/sublime-text-3/

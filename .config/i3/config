@@ -176,6 +176,8 @@ assign [class="Slack"] $workspace4
 assign [class="Thunderbird"] $workspace7
 assign [class="Mullvad"] $workspace8
 assign [class="jetbrains-idea"] $workspace6
+# assign [class="jetbrains-pycharm"] $workspace6
+for_window [class="jetbrains-pycharm"] move to workspace $workspace6
 assign [class="SpiderOakONE"] $workspace20
 assign [class="TogglDesktop"] $workspace19
 
@@ -368,7 +370,7 @@ exec_always notify-send "Started i3"
 exec google-chrome
 exec firefox
 exec subl
-# exec slack
+exec slack
 exec discord
 exec dropbox start
 exec thunderbird
@@ -385,10 +387,14 @@ exec /opt/Signal/signal-desktop
 #exec_always setxkbmap us -variant colemak -option caps:backspace
 exec_always setxkbmap us -variant altgr-intl -option nodeadkeys -option caps:backspace
 exec_always xset r 66
-exec_always bash ~/.screenlayout/homelayout.sh
 
 # for redshift
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/where-am-i
+
+# fix nvidia screen tearing https://www.youtube.com/watch?v=YvD9JvEna8o
+exec nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+exec_always bash ~/.screenlayout/homelayout.sh
+
 
 #open settings
 bindsym $mod+Escape exec export XDG_CURRENT_DESKTOP=GNOME && gnome-control-center

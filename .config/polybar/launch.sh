@@ -11,5 +11,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 MONITOR="DP-3" polybar bigbar &
 MONITOR="DVI-D-0" polybar traybar &
 MONITOR="DP-0" polybar littlebar &
+MONITOR="DVI-D-0" polybar bottombar &
 
 echo "Bars launched..."
