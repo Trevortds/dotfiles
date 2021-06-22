@@ -42,27 +42,25 @@ CITY=""
 UNITS="imperial"
 SYMBOL="°"
 
-if [ ! -z $CITY ]; then
-    current=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
-    forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
-else
-    location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
-    if [ ! -z "$location" ]; then
-        location_lat="$(echo "$location" | jq '.location.lat')"
-        location_lon="$(echo "$location" | jq '.location.lng')"
+location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
 
-        current=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
-        forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS&cnt=1")
-    fi
+if [ ! -z "$location" ]; then
+    location_lat="$(echo "$location" | jq '.location.lat')"
+    location_lon="$(echo "$location" | jq '.location.lng')"
+
+    weather_info=$(curl -sf "http://api.openweathermap.org/data/2.5/onecall?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+    # current=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+    # forecast=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS&cnt=1")
 fi
 
-if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
-    current_temp=$(echo "$current" | jq ".main.temp" | cut -d "." -f 1)
-    current_icon=$(echo "$current" | jq -r ".weather[].icon")
 
-    forecast_temp=$(echo "$forecast" | jq ".list[].main.temp" | cut -d "." -f 1)
-    forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[].icon")
+if [ ! -z "$weather_info" ]; then
+    current_temp=$(echo "$weather_info" | jq ".current.temp" | cut -d "." -f 1)
+    current_icon=$(echo "$weather_info" | jq -r ".current.weather[].icon")
+
+    forecast_temp=$(echo "$weather_info" | jq ".hourly[1].temp" | cut -d "." -f 1)
+    forecast_icon=$(echo "$weather_info" | jq -r ".hourly[1].weather[].icon")
 
 
     if [ "$current_temp" -gt "$forecast_temp" ]; then
@@ -74,8 +72,8 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     fi
 
 
-    sun_rise=$(echo "$current" | jq ".sys.sunrise")
-    sun_set=$(echo "$current" | jq ".sys.sunset")
+    sun_rise=$(echo "$weather_info" | jq ".current.sunrise")
+    sun_set=$(echo "$weather_info" | jq ".current.sunset")
     now=$(date +%s)
 
     if [ "$sun_rise" -gt "$now" ]; then
