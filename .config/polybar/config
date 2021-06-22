@@ -65,14 +65,15 @@ font-5 = Noto Color Emoji:pixelsize=10:style=Regular:scale=10;2
 
 
 modules-left = i3
-modules-center = polypomo
+modules-center = spotify
 ; modules-right = openweathermap-fullfeatured filesystem xkeyboard memory cpu wlan eth temperature date powermenu
-modules-right = openweathermap-fullfeatured filesystem xkeyboard memory cpu wlan temperature date powermenu
+modules-right = theme openweathermap-fullfeatured filesystem xkeyboard memory cpu wlan temperature date powermenu
 
 i3-pin-workspaces = true
 
 
-tray-position =
+tray-position = right
+tray-padding = 1
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -82,8 +83,8 @@ wm-restack = i3
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 
 [bar/traybar]
@@ -141,8 +142,9 @@ wm-restack = i3
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 
 [bar/littlebar]
@@ -180,9 +182,11 @@ font-4 = Weather Icons:size=13;1
 font-5 = Noto Color Emoji:pixelsize=10:style=Regular:scale=10;2
 
 modules-left = i3
-modules-center = spotify
-modules-right = xkeyboard memory cpu temperature date-small
-; modules-right = xkeyboard memory cpu eth temperature date-small
+modules-center = theme
+; modules-right = volume memory cpu temperature date
+;    old from small keyboard
+modules-right = filesystem xkeyboard memory cpu system-nvidia-smi wlan temperature date-small
+
 
 i3-pin-workspaces = true
 
@@ -200,8 +204,9 @@ wm-restack = i3
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 
 [bar/bottombar]
@@ -254,6 +259,12 @@ label = %title:0:30:...%
 type = custom/script
 interval = 3
 exec = node /home/trevor/src/toggl-timetracking-polybar-module/queryToggl.js
+
+[module/theme]
+type = custom/text
+content = Spring Of Completion
+format-underline = #1db954
+
 
 [module/polypomo]
 type = custom/script
@@ -580,7 +591,7 @@ type = internal/temperature
 thermal-zone = 1
 warn-temperature = 60
 
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
 
 format = <ramp> <label>
 format-underline = #f50a4d
