@@ -35,6 +35,7 @@ height = 36
 ;offset-y = 1%
 radius = 6.0
 fixed-center = false
+enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -67,7 +68,7 @@ font-5 = Noto Color Emoji:pixelsize=10:style=Regular:scale=10;2
 modules-left = i3
 modules-center = spotify
 ; modules-right = openweathermap-fullfeatured filesystem xkeyboard memory cpu wlan eth temperature date powermenu
-modules-right = theme openweathermap-fullfeatured filesystem xkeyboard memory cpu wlan temperature date powermenu
+modules-right = theme openweathermap-fullfeatured filesystem xkeyboard memory cpu wlan temperature date dunst powermenu
 
 i3-pin-workspaces = true
 
@@ -400,6 +401,14 @@ click-right = xdotool key XF86AudioNext
 click-middle = xdotool key XF86AudioPlay
 
 format-underline = #1db954
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-foreground = ${colors.yellow}
+
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}%{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}%{A}" &
 
 [module/info-hackspeed]
 type = custom/script

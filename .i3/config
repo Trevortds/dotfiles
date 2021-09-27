@@ -374,13 +374,13 @@ exec_always --no-startup-id fix_xcursor
 exec google-chrome-stable
 exec firefox
 exec subl
-exec slack
+# exec slack
 exec discord
 exec thunderbird
 # exec pasystray
 # exec gksudo mullvad
 exec /bin/TogglDesktop.sh
-exec /opt/notion-app/notion-app
+exec notion-app
 exec SpiderOakONE
 exec obsidian
 

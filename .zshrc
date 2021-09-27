@@ -144,14 +144,14 @@ source /home/trevor/src/conda-auto-env-master/conda_auto_env.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/common/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/trevor/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/common/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/common/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/trevor/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/trevor/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/common/anaconda3/bin:$PATH"
+        export PATH="/home/trevor/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
