@@ -263,6 +263,12 @@ assign [class="obsidian"] $ws9
 assign [title="Waveform PRO"] $ws6
 assign [title="Google-chrome"] $ws4
 assign [class="ticktick-nativefier-a173fa"] $ws18
+# to fix jetbrains ides
+assign [class="jetbrains-clion"] $ws6
+assign [class="java-lang-thread"] $ws6
+assign [instance="sun-awt-X11-XWindowPeer"] $ws6
+# to fix gfx
+assign [class="ToneLib-GFX"] $ws6 
 
 
 
@@ -298,6 +304,7 @@ for_window [class="Xfburn"] floating enable
 for_window [title="^Plover$"] floating enable border normal
 # to fix titanfall 2 and hopefully fallen order
 for_window [class="steam_app_1182480"] floating enable
+
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -379,7 +386,7 @@ exec discord
 exec thunderbird
 # exec pasystray
 # exec gksudo mullvad
-exec /bin/TogglDesktop.sh
+# exec /bin/TogglDesktop.sh
 exec notion-app
 exec SpiderOakONE
 exec obsidian
